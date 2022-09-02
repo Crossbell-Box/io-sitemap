@@ -10,7 +10,6 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"sitemap": "^7.1.1",
-		"undici": "^5.10.0"
+		"sitemap": "^7.1.1"
 	}
 }

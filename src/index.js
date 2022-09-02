@@ -1,15 +1,12 @@
-const { request } = require("undici");
 const { simpleSitemapAndIndex } = require("sitemap");
 const path = require("path");
 
 async function fetchCharacters({ cursor = 1, limit = 1000 }) {
-	const { body } = await request("https://indexer.crossbell.io/v1/graphql", {
+	const res = await fetch("https://indexer.crossbell.io/v1/graphql", {
 		method: "POST",
 		headers: { "Content-Type": "application/json" },
 		body: `{"query":"{ characters(cursor: { characterId: ${cursor} }, take: ${limit}) { handle } }"}`,
-	});
-
-	const res = await body.json();
+	}).then((res) => res.json());
 
 	return {
 		characters: res.data.characters,
