@@ -31,7 +31,7 @@ async function main() {
 		hostname: "https://crossbell.io",
 		destinationDir: path.resolve(__dirname, "..", "sitemaps"),
 		sourceData: handleUrls,
-		publicBasePath: "/sitemaps",
+		publicBasePath: "/",
 		gzip: false,
 	});
 }
